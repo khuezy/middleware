@@ -9,7 +9,7 @@
 6) `npx --package @sladg/nextjs-lambda next-utils pack` (press enter to install app, then will bundle the zip resources)
 7) `npx --package @sladg/nextjs-lambda next-utils deploy --stackName=middleware` (this will deploy standalone to AWS, copy the outputted cloudfront url)
 8) go to the cloudfront url
-9) Click on "about", notice that it does not go to "/redirected", instead it just goes to "route"
-10) Refresh your browser, notice how it *does* redirect to '/redirected' or '/rewrite'
+9) Click on "about", notice that it does not go to "/redirected", instead it just goes to "/about"
+10) Refresh your browser, notice how it *does* redirect to '/redirected'
 
 The deployment uses: https://github.com/sladg/nextjs-lambda
