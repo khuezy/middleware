@@ -1,31 +1,13 @@
-# Middleware
+# Standalone Middleware Bug Repro
 
-This example shows how to use [Middleware in Next.js](https://nextjs.org/docs/advanced-features/middleware) to run code before a request is completed.
-
-The index page ([`pages/index.tsx`](pages/index.tsx)) has a list of links to pages with `redirect`, `rewrite`, or normal behavior.
-
-On the Middleware file ([`middleware.ts`](middleware.ts)) the routes are already being filtered by defining a `matcher` on the exported config. If you want the Middleware to run for every request, you can remove the `matcher`.
-
-## Deploy your own
-
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/middleware&project-name=middleware&repository-name=middleware)
-
-## How to use
-
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
-
-```bash
-npx create-next-app --example middleware middleware-app
-```
-
-```bash
-yarn create next-app --example middleware middleware-app
-```
-
-```bash
-pnpm create next-app --example middleware middleware-app
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+1) `git clone git@github.com:khuezy/middleware.git`
+2) `cd middleware`
+3) `npm i`
+4) `npm run dev` (click on the "about" or "another" link and see they are properly redirected/rewritten)
+4b) kill dev process
+5) `npm run build` (build the standalone app)
+6) `npx --package @sladg/nextjs-lambda next-utils pack` (press enter to install app, then will bundle the zip resources)
+7) `npx --package @sladg/nextjs-lambda next-utils deploy --stackName=middleware` (this will deploy standalone to AWS, copy the outputted cloudfront url)
+8) go to the cloudfront url
+9) Click on "about", notice that it does not go to "/redirected", instead it just goes to "route"
+10) Refresh your browser, notice how it *does* redirect to '/redirected' or '/rewrite'
