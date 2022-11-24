@@ -4,12 +4,16 @@
 /node_modules
 /.pnp
 .pnp.js
+cdk.out
+next.out
 
 # testing
 /coverage
 
 # next.js
 /.next/
+/cdk.out/
+/next.out/
 /out/
 
 # production
