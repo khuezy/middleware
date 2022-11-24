@@ -11,3 +11,5 @@
 8) go to the cloudfront url
 9) Click on "about", notice that it does not go to "/redirected", instead it just goes to "route"
 10) Refresh your browser, notice how it *does* redirect to '/redirected' or '/rewrite'
+
+The deployment uses: https://github.com/sladg/nextjs-lambda
