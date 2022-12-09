@@ -8,8 +8,8 @@ export async function getStaticProps() {
     revalidate: 60
   }
 }
-export const About4Page: NextPage = () => {
-  return <h1>About 4: export static props, revalidate 60 </h1>
+export const About4Page: NextPage = (props: any) => {
+  return <h1>About 4: export static props, revalidate 60 {props.time}</h1>
 }
 
 export default About4Page

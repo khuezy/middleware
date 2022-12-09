@@ -7,8 +7,9 @@ export async function getStaticProps() {
     }
   }
 }
-export const About3Page: NextPage = () => {
-  return <h1>About 3: export static props, no revalidate </h1>
+export const About3Page: NextPage = (props: any) => {
+  return <h1>About 3: export static props, no revalidate {props.time}</h1>
 }
+
 
 export default About3Page
